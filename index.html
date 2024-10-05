@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Mastermind</h1>
+
+    <!-- Menú de selección de nivel -->
+    <div id="menu-overlay" class="overlay">
+        <div id="menu" class="menu">
+            <h2>Selecciona un nivel de dificultad</h2>
+            <button onclick="startGame(4)">Fácil (4 colores)</button>
+            <button onclick="startGame(6)">Medio (6 colores)</button>
+            <button onclick="startGame(10)">Difícil (10 colores)</button>
+        </div>
+    </div>
+
+    <!-- Contenedor del juego -->
+    <div id="game-container" class="hidden">
+        <div id="game">
+            <!-- Botones de colores -->
+            <div id="colors"></div>
+
+            <!-- Círculos de intento -->
+            <div id="attempt">
+                <div id="slot1" class="slot"></div>
+                <div id="slot2" class="slot"></div>
+                <div id="slot3" class="slot"></div>
+                <div id="slot4" class="slot"></div>
+            </div>
+
+            <!-- Botones de control -->
+            <button id="attempt-btn" onclick="checkAttempt()">Intentar</button>
+            <button id="solve-ai-btn" onclick="solveWithAI()">Resolver con IA</button>
+            <button id="back-to-menu-btn" onclick="backToMenu()">Volver al menú</button>
+
+            <div id="feedback"></div>
+            <div id="attempts"></div>
+            <div id="message"></div>
+            <button id="reset" onclick="resetGame()">Reiniciar Juego</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
